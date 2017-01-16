@@ -1,3 +1,92 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary" class="fixed-top">
+  <span>{{title}}</span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span><button md-button>GET STARTED</button></span>
+  <md-input-container dividerColor="accent" *ngIf="viewSearch">
+    <input md-input placeholder="Search" [(ngModel)]="listFilter" autofocus>
+  </md-input-container>
+  <span><button md-icon-button mdTooltip={{tooltip}} mdTooltipPosition="below" (click)="viewSearch=!viewSearch"><md-icon>search</md-icon></button></span>
+</md-toolbar>
+
+<app-common-card *ngIf="showCard('Button')"
+				 title="Button"
+                 toolbarTitle = "md-button"
+                 [tabs]="['HTML', 'TS', 'SCSS']"
+                 [codeUrls]="['app/my-buttons/my-buttons.component.html', 
+                             'app/my-buttons/my-buttons.component.ts',
+                             'app/my-buttons/my-buttons.component.scss']">
+  <app-my-buttons></app-my-buttons>
+</app-common-card>
+
+<app-common-card *ngIf="showCard('Card')"
+				 title="Card"
+                 toolbarTitle = "md-card"
+                 [tabs]="['HTML', 'TS', 'SCSS']"
+                 [codeUrls]="['app/my-cards/my-cards.component.html', 
+                             'app/my-cards/my-cards.component.ts',
+                             'app/my-cards/my-cards.component.scss']">
+  <app-my-cards></app-my-cards>
+</app-common-card>
+
+<app-common-card *ngIf="showCard('Checkbox')"
+				 title="Checkbox"
+                 toolbarTitle = "md-checkbox"
+                 [tabs]="['HTML', 'TS', 'SCSS']"
+                 [codeUrls]="['app/my-checkboxes/my-checkboxes.component.html', 
+                             'app/my-checkboxes/my-checkboxes.component.ts',
+                             'app/my-checkboxes/my-checkboxes.component.scss']">
+  <app-my-checkboxes></app-my-checkboxes>
+</app-common-card>
+
+<app-common-card *ngIf="showCard('Input')" class="my-transition"
+				 title="Input"
+                 toolbarTitle = "md-input"
+                 [tabs]="['HTML', 'TS', 'SCSS']"
+                 [codeUrls]="['app/my-inputs/my-inputs.component.html', 
+                             'app/my-inputs/my-inputs.component.ts',
+                             'app/my-inputs/my-inputs.component.scss']">
+  <app-my-inputs></app-my-inputs>
+</app-common-card>
+
+<app-common-card *ngIf="showCard('Menu')"
+				 title="Menu"
+                 toolbarTitle = "md-menu"
+                 [tabs]="['HTML', 'TS', 'SCSS']"
+                 [codeUrls]="['app/my-menus/my-menus.component.html', 
+                             'app/my-menus/my-menus.component.ts',
+                             'app/my-menus/my-menus.component.scss']">
+  <app-my-menus></app-my-menus>
+</app-common-card>
+
+<app-common-card *ngIf="showCard('Slide toggle')"
+				 title="Slide toggle"
+                 toolbarTitle = "md-slide-toggle"
+                 [tabs]="['HTML', 'TS', 'SCSS']"
+                 [codeUrls]="['app/my-slides-toggles/my-slides-toggles.component.html', 
+                             'app/my-slides-toggles/my-slides-toggles.component.ts',
+                             'app/my-slides-toggles/my-slides-toggles.component.scss']">
+  <app-my-slide-toggles></app-my-slide-toggles>
+</app-common-card>
+
+<app-common-card *ngIf="showCard('Toolbar')"
+				 title="Toolbar"
+                 toolbarTitle = "md-toolbar"
+                 [tabs]="['HTML', 'TS', 'SCSS']"
+                 [codeUrls]="['app/my-toolbars/my-toolbars.component.html', 
+                             'app/my-toolbars/my-toolbars.component.ts',
+                             'app/my-toolbars/my-toolbars.component.scss']">
+  <app-my-toolbars></app-my-toolbars>
+</app-common-card>
+
+<!--  
+<div *ngFor="let component of components; let i=index">
+  <app-common-card [title]="component.cardTitle"
+                   [toolbarTitle] = "component.toolbarTitle"
+                   [tabs]="component.tabs"
+                   [codeUrls]="component.codeurls"
+                   [tag]="i+1">
+  </app-common-card>
+</div>
+-->

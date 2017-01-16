@@ -1,0 +1,9 @@
+<md-tab-group (click)="onClick([selectedIndex])">
+  <div *ngFor="let tab of tabs; let i = index;">
+    <md-tab label={{tab}}>
+      <div class="code-container" *ngFor="let code of codes[i]">
+	        <code>{{code}}</code>
+      </div>
+    </md-tab>
+  </div>
+</md-tab-group>

@@ -1,0 +1,18 @@
+input {
+//  background-color: white;  
+  color: white;
+  font-size: 17px;
+}
+
+.fixed-top {
+  flex: 0 0 auto; 
+}
+
+.transitions {
+    width: 100px;
+    height: 100px;
+//    background: red;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+}
+

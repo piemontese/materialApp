@@ -1,0 +1,22 @@
+<md-card>
+  <md-card-title (click)="showCardContent()">
+    {{title}}
+  </md-card-title>
+  <!--   
+  <md-card-content *ngIf="showContent" [@cardInOut]="cardState">
+  -->
+  <md-card-content *ngIf="showContent">
+    <app-common-toolbar [title]="toolbarTitle" 
+                        [tabs]="tabs"
+                        [codeUrls]="codeUrls">
+  	
+      <ng-content *ngIf="showContent && !viewCodeShow && tag==0"></ng-content>
+	
+  	  <app-my-buttons *ngIf="tag==1"></app-my-buttons>
+  	  <app-my-cards *ngIf="tag==2"></app-my-cards>
+  	  <app-my-checkboxes *ngIf="tag==3"></app-my-checkboxes>
+  	  <app-my-inputs *ngIf="tag==4"></app-my-inputs>
+  	  <app-my-menus *ngIf="tag==5"></app-my-menus>
+    </app-common-toolbar>
+  </md-card-content>
+</md-card>
