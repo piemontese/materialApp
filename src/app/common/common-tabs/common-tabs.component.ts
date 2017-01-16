@@ -32,6 +32,8 @@ export class CommonTabsComponent implements OnInit {
     );
     */
     
+    console.log(this.tabs);
+    console.log(this.codeUrls);
     let str: string = '';
     for( let i=0; i<this.codeUrls.length; i++ ) {
       this.codes[i] = [];

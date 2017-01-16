@@ -23,6 +23,7 @@ export class CommonToolbarComponent implements OnInit {
   }
   
   viewCode() {
+    console.log(this.codeUrls);
     this.viewCodeShow = !this.viewCodeShow;
     this.tooltip = this.viewCodeShow ? 'Browser Output' : 'View Source';
   }
