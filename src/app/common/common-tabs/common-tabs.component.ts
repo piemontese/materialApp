@@ -32,6 +32,7 @@ export class CommonTabsComponent implements OnInit {
     );
     */
     
+    /*
     console.log(this.tabs);
     console.log(this.codeUrls);
     let str: string = '';
@@ -40,9 +41,10 @@ export class CommonTabsComponent implements OnInit {
       this.http.request(this.codeUrls[i]).subscribe(
         response => str = response.text(),
         () => {},
-        () => this.codes[i] = str./*replace(/ /g, "&nbsp;").*/split("\n")
+        () => this.codes[i] = str.replace(/ /g, "&nbsp;").split("\n")
       );
     }
+    */
   }
 
 }

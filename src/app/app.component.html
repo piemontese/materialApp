@@ -10,6 +10,7 @@
   <span><button md-icon-button mdTooltip={{tooltip}} mdTooltipPosition="below" (click)="viewSearch=!viewSearch"><md-icon>search</md-icon></button></span>
 </md-toolbar>
 
+<!-- 
 <app-common-card *ngIf="showCard('Button')"
 				 title="Button"
                  toolbarTitle = "md-button"
@@ -79,10 +80,11 @@
                              'app/my-toolbars/my-toolbars.component.scss']">
   <app-my-toolbars></app-my-toolbars>
 </app-common-card>
- 
+--> 
  
 <div *ngFor="let component of components; let i=index">
-  <app-common-card [title]="component.cardTitle"
+  <app-common-card *ngIf="showCard(component.cardTitle)" 
+  				   [title]="component.cardTitle"
                    [toolbarTitle] = "component.toolbarTitle"
                    [tabs]="component.tabs"
                    [codeUrls]="component.codeUrls"

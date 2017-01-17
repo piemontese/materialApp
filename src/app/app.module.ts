@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { CommonToolbarComponent } from './common/common-toolbar/common-toolbar.component';
 import { CommonCardComponent } from './common/common-card/common-card.component';
 import { CommonTabsComponent } from './common/common-tabs/common-tabs.component';
+import { CommonCodeComponent } from './common/common-code/common-code.component';
+import { CommonMainToolbarComponent } from './common/common-main-toolbar/common-main-toolbar.component';
 
 import { MyButtonsComponent } from './my-buttons/my-buttons.component';
 import { MyCodeService } from './my-code.service';
@@ -39,6 +41,8 @@ import { MyToolbarsComponent } from './my-toolbars/my-toolbars.component';
     ComponentFilterPipe,
     MySlideTogglesComponent,
     MyToolbarsComponent,
+    CommonCodeComponent,
+    CommonMainToolbarComponent,
   ],
   imports: [
     BrowserModule,
