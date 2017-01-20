@@ -12,6 +12,9 @@ export class CommonCodeComponent implements OnInit {
   @Input() codeUrl: string;
   @Input() code: Array<string> = [];
   node: string = '';
+  requestEnd: boolean = false;
+  codeString: string = '';
+  copyTooltip: string = 'Copy code';
 
   constructor( private http: Http, public element: ElementRef ) { 
       this.element.nativeElement // <- your direct element reference 
@@ -27,14 +30,26 @@ export class CommonCodeComponent implements OnInit {
         () => console.log('completed!')
       );
       */
-      
+      this.copyTooltip = 'Copy code';
+      this.requestEnd = false;
       let str: string = '';
       for( let i=0; i<this.codeUrl.length; i++ ) {
         this.code = [];
         this.http.request(this.codeUrl).subscribe(
           response => str = response.text(),
           () => {},
-          () => this.code = str./*replace(/ /g, "&nbsp;").*/split("\n")
+          () => { this.code = str./*replace(/ /g, "&nbsp;").*/split("\n"); 
+                  this.requestEnd = true; 
+                  this.codeString = '';
+                  /*
+                  for( let i=0; i<this.code.length; i++ ) {
+                      this.codeString += this.code[i] + '\n';
+                  } 
+                  console.log(this.code);
+                  */
+                  this.codeString = '\n' + str;
+                  console.log(this.codeString);
+                }
         );
       }
 

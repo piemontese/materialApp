@@ -8,6 +8,12 @@ input {
   flex: 0 0 auto; 
 }
 
+.app-container {
+  width: 100%;
+//  float: left;
+//  display: inline; 
+}
+
 .transitions {
     width: 100px;
     height: 100px;

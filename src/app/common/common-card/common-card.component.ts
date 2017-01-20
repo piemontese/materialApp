@@ -26,8 +26,8 @@ export class CommonCardComponent implements OnInit {
   @Input() tabs: Array<any>;
   @Input() codeUrls: Array<string>;
   @Input() tag: Tags = 0;
+  @Input() showContent: boolean = false;
   viewCodeShow: boolean = false;
-  showContent: boolean = false;
   tooltip: string = 'View Source';
   cardState:string = 'in';
 
@@ -44,6 +44,11 @@ export class CommonCardComponent implements OnInit {
     console.log(this.cardState);
   }
    
+  handleExpandUpdated( expand: boolean ) {
+      this.showContent = expand;
+      console.log(this.showContent);
+  }
+
   ngOnInit() {
 //    console.log('tabs: ' + this.tabs);
 //    console.log('codeUrls: ' + this.codeUrls);

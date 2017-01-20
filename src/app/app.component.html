@@ -1,13 +1,18 @@
 <md-toolbar color="primary" class="fixed-top">
-  <span>{{title}}</span>
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
-
-  <span><button md-button>GET STARTED</button></span>
-  <md-input-container dividerColor="accent" *ngIf="viewSearch">
-    <input md-input placeholder="Search" [(ngModel)]="listFilter" autofocus>
-  </md-input-container>
-  <span><button md-icon-button mdTooltip={{tooltip}} mdTooltipPosition="below" (click)="viewSearch=!viewSearch"><md-icon>search</md-icon></button></span>
+	<!--  <md-toolbar-row></md-toolbar-row> -->
+	<md-toolbar-row>
+	  <span>{{title}}</span>
+	  <!-- This fills the remaining space of the current row -->
+	  <span class="example-fill-remaining-space"></span>
+	
+	  <span><button md-button>GET STARTED</button></span>
+	  <md-input-container dividerColor="accent" *ngIf="viewSearch">
+	    <input md-input placeholder="Search" md-tooltip="Start guide" [(ngModel)]="listFilter" autofocus>
+	  </md-input-container>
+	  <span><button md-icon-button mdTooltip="View mode" mdTooltipPosition="below" (click)="listView=!listView"><md-icon>reorder</md-icon></button></span>
+	  <span><button md-icon-button mdTooltip="Expand / collaps all" mdTooltipPosition="below" (click)="expand=!expand"><md-icon>swap_vert</md-icon></button></span>
+	  <span><button md-icon-button mdTooltip="Search" mdTooltipPosition="below" (click)="viewSearch=!viewSearch"><md-icon>search</md-icon></button></span>
+	</md-toolbar-row>
 </md-toolbar>
 
 <!-- 
@@ -82,13 +87,16 @@
 </app-common-card>
 --> 
  
-<div *ngFor="let component of components; let i=index">
-  <app-common-card *ngIf="showCard(component.cardTitle)" 
-  				   [title]="component.cardTitle"
-                   [toolbarTitle] = "component.toolbarTitle"
-                   [tabs]="component.tabs"
-                   [codeUrls]="component.codeUrls"
-                   [tag]="i+1">
-  </app-common-card>
+<div class="app-container">
+		<div *ngFor="let component of components; let i=index" [ngClass]="{'grid-50': !listView }">
+		  <app-common-card *ngIf="showCard(component.cardTitle)" 
+		  				   			 [title]="component.cardTitle"
+		                   [toolbarTitle] = "component.toolbarTitle"
+		                   [tabs]="component.tabs"
+		                   [codeUrls]="component.codeUrls"
+		                   [tag]="i+1"
+		                   [showContent]="expand"
+		                   (expandUpdated)="handleExpandUpdated($event)">
+		  </app-common-card>
+		</div>
 </div>
-

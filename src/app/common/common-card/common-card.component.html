@@ -6,8 +6,12 @@
   <md-card-content *ngIf="showContent" [@cardInOut]="cardState">
   -->
   <md-card-content *ngIf="showContent">
+    <!--  
     <app-common-main-toolbar [title]="toolbarTitle">
     </app-common-main-toolbar>
+    <app-common-main-tab [tabs]="['OVERVIEW', 'API REFERENCE', 'EXAMPLES']">
+    </app-common-main-tab>
+    -->
     <app-common-toolbar [title]="toolbarTitle" 
                         [tabs]="tabs"
                         [codeUrls]="codeUrls">

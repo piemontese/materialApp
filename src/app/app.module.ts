@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ClipboardModule } from 'ngx-clipboard';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
-import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js'; //or for angular-cli the path will be ../../node_modules/angular2-highlight-js 
 
 import { AppComponent } from './app.component';
 
@@ -13,6 +13,7 @@ import { CommonCardComponent } from './common/common-card/common-card.component'
 import { CommonTabsComponent } from './common/common-tabs/common-tabs.component';
 import { CommonCodeComponent } from './common/common-code/common-code.component';
 import { CommonMainToolbarComponent } from './common/common-main-toolbar/common-main-toolbar.component';
+import { CommonMainTabComponent } from './common/common-main-tab/common-main-tab.component';
 
 import { MyButtonsComponent } from './my-buttons/my-buttons.component';
 import { MyCodeService } from './my-code.service';
@@ -28,7 +29,6 @@ import { MyToolbarsComponent } from './my-toolbars/my-toolbars.component';
 @NgModule({
   declarations: [
     AppComponent,
-//    HighlightJsModule,
     CommonToolbarComponent,
     CommonCardComponent,
     CommonTabsComponent,
@@ -43,15 +43,16 @@ import { MyToolbarsComponent } from './my-toolbars/my-toolbars.component';
     MyToolbarsComponent,
     CommonCodeComponent,
     CommonMainToolbarComponent,
+    CommonMainTabComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    ClipboardModule
   ],
   providers: [
-//    HighlightJsService, 
     MyCodeService
   ],
   bootstrap: [AppComponent]

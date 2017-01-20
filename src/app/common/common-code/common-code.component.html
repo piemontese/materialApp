@@ -1,11 +1,18 @@
- <div class="code-container" *ngFor="let line of code">
-		<code>
-			<span>{{line}}</span>
+<md-progress-bar mode="indeterminate" color="accent" *ngIf="requestEnd!=true"></md-progress-bar>
+<div class="parent-container">
+	<div class="grid-5">
+	</div>
+	<pre class="code-container grid-90">
+		<code class="code-line">
+			{{codeString}}
 		</code>
+	</pre>
+	<div class="grid-5">
+	  <span><button md-icon-button mdTooltip={{copyTooltip}} mdTooltipPosition="below" ngxClipboard [cbContent]="codeString" (cbOnSuccess)="copyTooltip='Code copied'"><md-icon>note</md-icon></button></span>
+	</div>
 </div>
 <!--  
 <pre>
 	<code id="code">{{ node }}</code>
 </pre>
 -->
-

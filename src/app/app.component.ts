@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MyButtonsComponent } from './my-buttons/my-buttons.component';
 
+/*
 export interface MyTabs {
     html: string;
     ts: string;
@@ -13,16 +14,20 @@ export interface MyComponent {
     codeUrls: Array<MyTabs>;
     tag: string;
 }
+*/
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @Output() expandUpdated = new EventEmitter();
   title: string = 'Angular Material 2';
   listFilter: string = '';
   searchMatch: boolean = true;
   components: Array<any> = [];
+  expand: boolean = false;
+  listView: boolean = true;
 
   /*
   components = [ 
@@ -45,6 +50,8 @@ export class AppComponent {
   viewSearch: boolean = false;
   
   constructor() {
+    this.expandUpdated.emit(this.expand);
+
     let tabs = [ 'HTML', 'TS', 'SCSS'];
     
     let codeUrls = [ 'app/my-buttons/my-buttons.component.html', 'app/my-buttons/my-buttons.component.ts', 'app/my-buttons/my-buttons.component.scss' ];
