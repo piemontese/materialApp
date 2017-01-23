@@ -25,6 +25,10 @@ import { CardHoverDirective } from './common/card-hover.directive';
 import { ComponentFilterPipe } from './common/component-filter.pipe';
 import { MySlideTogglesComponent } from './my-slide-toggles/my-slide-toggles.component';
 import { MyToolbarsComponent } from './my-toolbars/my-toolbars.component';
+import { MyRadioButtonsComponent } from './my-radio-buttons/my-radio-buttons.component';
+import { MyProgressSpinnersComponent } from './my-progress-spinners/my-progress-spinners.component';
+import { MyProgressBarsComponent } from './my-progress-bars/my-progress-bars.component';
+import { MyDialogComponent, DialogOverviewExampleDialog } from './my-dialog/my-dialog.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,11 @@ import { MyToolbarsComponent } from './my-toolbars/my-toolbars.component';
     CommonCodeComponent,
     CommonMainToolbarComponent,
     CommonMainTabComponent,
+    MyRadioButtonsComponent,
+    MyProgressSpinnersComponent,
+    MyProgressBarsComponent,
+    MyDialogComponent,
+    DialogOverviewExampleDialog,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +63,9 @@ import { MyToolbarsComponent } from './my-toolbars/my-toolbars.component';
   ],
   providers: [
     MyCodeService
+  ],
+  entryComponents: [
+    DialogOverviewExampleDialog,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,8 +1,10 @@
 import { Component, Input, OnInit, trigger, state, style, transition, animate } from '@angular/core';
-
+import {Tags } from '../tags.enum';
+/*
 enum Tags {
-    button=1, card, checkbox, input, menu, slideToggle, toolbar
+    button=1, card, checkbox, input, menu, radioButton, slideToggle, toolbar
 };
+*/
 @Component({
   selector: 'app-common-card',
   templateUrl: './common-card.component.html',
@@ -25,13 +27,16 @@ export class CommonCardComponent implements OnInit {
   @Input() toolbarTitle: string = 'Toolbar';
   @Input() tabs: Array<any>;
   @Input() codeUrls: Array<string>;
-  @Input() tag: Tags = 0;
+  @Input() tag: Tags = -1;
   @Input() showContent: boolean = false;
   viewCodeShow: boolean = false;
   tooltip: string = 'View Source';
-  cardState:string = 'in';
+  cardState: string = 'in';
+  tags = Tags;
 
-  constructor() { }
+  constructor() { 
+      console.log(this.tags.button);
+  }
 
   viewCode() {
     this.viewCodeShow = !this.viewCodeShow;
@@ -50,8 +55,6 @@ export class CommonCardComponent implements OnInit {
   }
 
   ngOnInit() {
-//    console.log('tabs: ' + this.tabs);
-//    console.log('codeUrls: ' + this.codeUrls);
   }
 
 }

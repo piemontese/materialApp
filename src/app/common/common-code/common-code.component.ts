@@ -48,15 +48,10 @@ export class CommonCodeComponent implements OnInit {
                   console.log(this.code);
                   */
                   this.codeString = '\n' + str;
-                  console.log(this.codeString);
+//                  console.log(this.codeString);
                 }
         );
       }
-
-      for( let i=0; i<this.code.length; i++ ) {
-          this.node += this.code[i];
-      }
-      console.log(this.node);
 
       let el = this.element.nativeElement;
 //    el.append('<p>new<p>');
