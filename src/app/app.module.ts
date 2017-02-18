@@ -58,7 +58,7 @@ import { MyDialogComponent, DialogOverviewExampleDialog } from './my-dialog/my-d
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
     ClipboardModule
   ],
   providers: [

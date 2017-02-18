@@ -6,17 +6,17 @@
   <md-card-content *ngIf="showContent" [@cardInOut]="cardState">
   -->
   <md-card-content *ngIf="showContent">
-    <!--  
+ 		<!-- 
     <app-common-main-toolbar [title]="toolbarTitle">
     </app-common-main-toolbar>
     <app-common-main-tab [tabs]="['OVERVIEW', 'API REFERENCE', 'EXAMPLES']">
     </app-common-main-tab>
     -->
-    <app-common-toolbar [title]="toolbarTitle" 
-                        [tabs]="tabs"
-                        [codeUrls]="codeUrls">
+   	<app-common-toolbar [title]="toolbarTitle" 
+     	                  [tabs]="tabs"
+       	                [codeUrls]="codeUrls">
   	
-      <ng-content *ngIf="showContent && !viewCodeShow && tag==-1"></ng-content>
+    	<ng-content *ngIf="showContent && !viewCodeShow && tag==-1"></ng-content>
 	
   	  <app-my-buttons *ngIf="tag==tags.button"></app-my-buttons>
   	  <app-my-cards *ngIf="tag==tags.card"></app-my-cards>

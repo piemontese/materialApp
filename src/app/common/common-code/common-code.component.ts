@@ -2,6 +2,9 @@ import { Component, Input, OnInit, ElementRef, AfterContentInit } from '@angular
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/timeout';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'app-common-code',
@@ -35,21 +38,23 @@ export class CommonCodeComponent implements OnInit {
       let str: string = '';
       for( let i=0; i<this.codeUrl.length; i++ ) {
         this.code = [];
-        this.http.request(this.codeUrl).subscribe(
-          response => str = response.text(),
-          () => {},
-          () => { this.code = str./*replace(/ /g, "&nbsp;").*/split("\n"); 
-                  this.requestEnd = true; 
-                  this.codeString = '';
-                  /*
-                  for( let i=0; i<this.code.length; i++ ) {
-                      this.codeString += this.code[i] + '\n';
-                  } 
-                  console.log(this.code);
-                  */
-                  this.codeString = '\n' + str;
-//                  console.log(this.codeString);
-                }
+        this.http.get(this.codeUrl)
+          .timeout(10)
+          .catch(this.handleError)
+          .subscribe( response => str = response.text(),
+              () => {},
+              () => { this.code = str./*replace(/ /g, "&nbsp;").*/split("\n"); 
+                      this.requestEnd = true; 
+                      this.codeString = '';
+                      /*
+                      for( let i=0; i<this.code.length; i++ ) {
+                          this.codeString += this.code[i] + '\n';
+                      } 
+                      console.log(this.code);
+                      */
+                      this.codeString = '\n' + str;
+    //                  console.log(this.codeString);
+                    }
         );
       }
 
@@ -59,6 +64,11 @@ export class CommonCodeComponent implements OnInit {
 //    el.getElementById('code');
   }
 
+  private handleError (error: Response) {
+      console.error(error);
+      return Observable.throw(error.json().error || 'Server error');
+  }
+  
   ngAfterContentInit() {
     const tmp = document.createElement('div');
     const elm = this.element.nativeElement.cloneNode(true);
