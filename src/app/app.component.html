@@ -1,17 +1,18 @@
-<md-toolbar color="primary" class="fixed-top">
+<md-toolbar color="primary" class="fixed-top transparent-background">
 	<!--  <md-toolbar-row></md-toolbar-row> -->
 	<md-toolbar-row>
-	  <span>{{title}}</span>
+	  <span class="app-title">{{title}}</span>
 	  <!-- This fills the remaining space of the current row -->
 	  <span class="example-fill-remaining-space"></span>
 	
 	  <span><button md-button>GET STARTED</button></span>
-	  <md-input-container dividerColor="accent" *ngIf="viewSearch">
-	    <input md-input placeholder="Search" md-tooltip="Start guide" [(ngModel)]="listFilter" autofocus>
-	  </md-input-container>
 	  <span><button md-icon-button mdTooltip="View mode" mdTooltipPosition="below" (click)="listView=!listView"><md-icon>reorder</md-icon></button></span>
 	  <span><button md-icon-button mdTooltip="Expand / collaps all" mdTooltipPosition="below" (click)="expand=!expand"><md-icon>swap_vert</md-icon></button></span>
 	  <span><button md-icon-button mdTooltip="Search" mdTooltipPosition="below" (click)="viewSearch=!viewSearch"><md-icon>search</md-icon></button></span>
+	  <md-input-container dividerColor="accent" *ngIf="viewSearch">
+	    <input mdInput placeholder="Search" [(ngModel)]="listFilter" autofocus>
+	  </md-input-container>
+	  <span><button md-icon-button *ngIf="viewSearch" (click)="viewSearch=!viewSearch; listFilter=''"><md-icon>clear</md-icon></button></span>
 	</md-toolbar-row>
 </md-toolbar>
 
