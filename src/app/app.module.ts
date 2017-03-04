@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ClipboardModule } from 'ngx-clipboard';
 import { MaterialModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -29,6 +30,9 @@ import { MyRadioButtonsComponent } from './my-radio-buttons/my-radio-buttons.com
 import { MyProgressSpinnersComponent } from './my-progress-spinners/my-progress-spinners.component';
 import { MyProgressBarsComponent } from './my-progress-bars/my-progress-bars.component';
 import { MyDialogComponent, DialogOverviewExampleDialog } from './my-dialog/my-dialog.component';
+import { MyAutocompleteComponent } from './my-autocomplete/my-autocomplete.component';
+import { MySidenavComponent } from './my-sidenav/my-sidenav.component';
+import { ApplicationToolbarComponent } from './application-toolbar/application-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -53,12 +57,17 @@ import { MyDialogComponent, DialogOverviewExampleDialog } from './my-dialog/my-d
     MyProgressBarsComponent,
     MyDialogComponent,
     DialogOverviewExampleDialog,
+    MyAutocompleteComponent,
+    MySidenavComponent,
+    ApplicationToolbarComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule, 
+    ReactiveFormsModule,
     HttpModule,
     MaterialModule,
+    FlexLayoutModule,
     ClipboardModule
   ],
   providers: [

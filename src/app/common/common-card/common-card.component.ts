@@ -1,10 +1,7 @@
 import { Component, Input, OnInit, trigger, state, style, transition, animate } from '@angular/core';
+
 import {Tags } from '../tags.enum';
-/*
-enum Tags {
-    button=1, card, checkbox, input, menu, radioButton, slideToggle, toolbar
-};
-*/
+
 @Component({
   selector: 'app-common-card',
   templateUrl: './common-card.component.html',
@@ -17,8 +14,8 @@ enum Tags {
       state('out', style({
         transform: 'translate3d(0, 100%, 0)'
       })),
-      transition('in => out', animate('400ms ease-in-out')),
-      transition('out => in', animate('400ms ease-in-out'))
+      transition('in => out', animate('1000ms ease-in-out')),
+      transition('out => in', animate('1000ms ease-in-out'))
     ]),
   ]
 })

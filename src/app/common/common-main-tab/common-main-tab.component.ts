@@ -1,13 +1,24 @@
 import { Component, Input, OnInit, trigger, state, style, transition, animate } from '@angular/core';
 
-enum Tags {
-    button=1, card, checkbox, input, menu, slideToggle, toolbar
-};
+import { Tags } from '../../common/tags.enum';
+
 
 @Component({
   selector: 'app-common-main-tab',
   templateUrl: './common-main-tab.component.html',
-  styleUrls: ['./common-main-tab.component.css']
+  styleUrls: ['./common-main-tab.component.css'],
+  animations: [
+               trigger('cardInOut', [
+                 state('in', style({
+                   transform: 'translate3d(0, 0, 0)'
+                 })),
+                 state('out', style({
+                   transform: 'translate3d(0, 100%, 0)'
+                 })),
+                 transition('in => out', animate('1000ms ease-in-out')),
+                 transition('out => in', animate('1000ms ease-in-out'))
+               ]),
+             ]
 })
 export class CommonMainTabComponent implements OnInit {
   @Input() title: string = 'Card';

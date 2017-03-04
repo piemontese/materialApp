@@ -1,8 +1,6 @@
 import { Component, Input, OnInit, trigger, state, style, transition, animate } from '@angular/core';
 
-enum Tags {
-    button=1, card, checkbox, input, menu, slideToggle, toolbar
-};
+import { Tags } from '../../common/tags.enum';
 
 @Component({
   selector: 'app-common-main-toolbar',

@@ -1,11 +1,11 @@
 <md-toolbar color="primary" class="fixed-top transparent-background">
 	  <!-- This fills the remaining space of the current row -->
 	  <span class="example-fill-remaining-space"></span>
-	  	<button md-icon-button mdTooltip="Search" mdTooltipPosition="below" (click)="viewSearch=true"><md-icon>search</md-icon></button>
+	  	<button md-icon-button mdTooltip="Search" mdTooltipPosition="below" (click)="viewSearch=true" [disabled]="!viewsearch"><md-icon>search</md-icon></button>
 	  	<md-input-container dividerColor="accent" *ngIf="viewSearch">
 	    	<input mdInput placeholder="Search" [(ngModel)]="listFilter" autofocus>
 	  	</md-input-container>
-	  	<button md-icon-button *ngIf="viewSearch" mdTooltip="Close search" mdTooltipPosition="below"  (click)="viewSearch=!viewSearch; listFilter=''"><md-icon>clear</md-icon></button>
+	  	<button md-icon-button *ngIf="viewSearch" mdTooltip="Close search" mdTooltipPosition="below" (click)="viewSearch=!viewSearch; listFilter=''"><md-icon>clear</md-icon></button>
 	<md-toolbar-row>
 	  <span class="app-title">{{title}}</span>
 	  
@@ -22,7 +22,6 @@
 	  <span><button md-icon-button *ngIf="viewSearch" (click)="viewSearch=!viewSearch; listFilter=''"><md-icon>clear</md-icon></button></span>
 -->
 
-  
 <div class="flex-container" fxLayout="row">
 	  <div class="flex-item">
 	  	<button md-button>GET STARTED</button>
@@ -40,20 +39,3 @@
 
   </md-toolbar-row>
 </md-toolbar>
-<!--  
-<app-application-toolbar></app-application-toolbar>
--->
-
-<div class="app-container">
-		<div *ngFor="let component of components; let i=index" [ngClass]="{'grid-50': !listView }">
-		  <app-common-card *ngIf="showCard(component.cardTitle)" 
-		  				   			 [title]="component.cardTitle"
-		                   [toolbarTitle] = "component.toolbarTitle"
-		                   [tabs]="component.tabs"
-		                   [codeUrls]="component.codeUrls"
-		                   [tag]="i"
-		                   [showContent]="expand"
-		                   (expandUpdated)="handleExpandUpdated($event)">
-		  </app-common-card>
-		</div>
-</div>

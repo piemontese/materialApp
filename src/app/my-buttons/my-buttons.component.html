@@ -1,4 +1,18 @@
-<button md-button>FLAT</button>
-<button md-raised-button color="primary">PRIMARY</button>
-<button md-raised-button color="accent">ACCENT</button>
-<button md-raised-button color="warn">WARN</button>
+<md-card>
+<section>
+  <h2> Active buttons</h2>  
+  <button md-button>FLAT</button>
+  <button md-raised-button color="primary">PRIMARY</button>
+  <button md-raised-button color="accent">ACCENT</button>
+  <button md-raised-button color="warn">WARN</button>
+</section>
+
+<section>
+  <h2>Disabled buttons</h2>  
+  <button md-button disabled>FLAT</button>
+  <button md-raised-button color="primary" disabled>PRIMARY</button>
+  <button md-raised-button color="accent" [disabled]="true">ACCENT</button>
+  <button md-raised-button color="warn" [disabled]="true">WARN</button>
+</section>
+</md-card>
+	

@@ -39,23 +39,18 @@ export class CommonCodeComponent implements OnInit {
       for( let i=0; i<this.codeUrl.length; i++ ) {
         this.code = [];
         this.http.get(this.codeUrl)
-          .timeout(10)
+//          .timeout(1)
           .catch(this.handleError)
           .subscribe( response => str = response.text(),
               () => {},
               () => { this.code = str./*replace(/ /g, "&nbsp;").*/split("\n"); 
                       this.requestEnd = true; 
                       this.codeString = '';
-                      /*
-                      for( let i=0; i<this.code.length; i++ ) {
-                          this.codeString += this.code[i] + '\n';
-                      } 
-                      console.log(this.code);
-                      */
                       this.codeString = '\n' + str;
-    //                  console.log(this.codeString);
                     }
-        );
+        ),  (errorResponse: any) => { 
+                console.log('timeout error') 
+            };
       }
 
       let el = this.element.nativeElement;

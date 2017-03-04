@@ -1,4 +1,5 @@
 export enum Tags {
+    autocomplete,
     button, 
     card, 
     checkbox, 
@@ -9,5 +10,6 @@ export enum Tags {
     progressBar, 
     radioButton, 
     slideToggle, 
+    sidenav,
     toolbar
 }

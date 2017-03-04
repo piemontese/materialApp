@@ -1,5 +1,5 @@
 <md-card>
-  <md-card-title (click)="showCardContent()">
+  <md-card-title color="primary" (click)="showCardContent()">
     {{title}}
   </md-card-title>
   <!--   
@@ -29,6 +29,8 @@
   	  <app-my-slide-toggles *ngIf="tag==tags.slideToggle"></app-my-slide-toggles>
   	  <app-my-toolbars *ngIf="tag==tags.toolbar"></app-my-toolbars>
   	  <app-my-dialog *ngIf="tag==tags.dialog"></app-my-dialog>
+  	  <app-my-autocomplete *ngIf="tag==tags.autocomplete"></app-my-autocomplete>
+  	  <app-my-sidenav *ngIf="tag==tags.sidenav"></app-my-sidenav>
     </app-common-toolbar>
   </md-card-content>
 </md-card>
