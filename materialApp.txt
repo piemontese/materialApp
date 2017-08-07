@@ -1,9 +1,11 @@
 
-
+npm install --save @angular/animations
 npm install --save @angular/material
 npm install --save hammerjs 
 npm install --save @angular/flex-layout@latest
 npm install --save ngx-clipboard
+npm install --save screenfull
+
 
 
 

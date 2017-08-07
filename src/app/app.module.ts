@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ClipboardModule } from 'ngx-clipboard';
@@ -7,6 +9,7 @@ import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CommonToolbarComponent } from './common/common-toolbar/common-toolbar.component';
@@ -33,6 +36,11 @@ import { MyDialogComponent, DialogOverviewExampleDialog } from './my-dialog/my-d
 import { MyAutocompleteComponent } from './my-autocomplete/my-autocomplete.component';
 import { MySidenavComponent } from './my-sidenav/my-sidenav.component';
 import { ApplicationToolbarComponent } from './application-toolbar/application-toolbar.component';
+import { GetStartedComponent } from './get-started/get-started.component';
+import { ComponentsComponent } from './components/components.component';
+import { HomeComponent } from './home/home.component';
+import { MyFlexLayoutComponent } from './my-flex-layout/my-flex-layout.component';
+import { ToggleFullscreenDirective } from './toggle-fullscreen.directive';
 
 @NgModule({
   declarations: [
@@ -60,12 +68,20 @@ import { ApplicationToolbarComponent } from './application-toolbar/application-t
     MyAutocompleteComponent,
     MySidenavComponent,
     ApplicationToolbarComponent,
+    GetStartedComponent,
+    ComponentsComponent,
+    HomeComponent,
+    MyFlexLayoutComponent,
+    ToggleFullscreenDirective,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule, 
+    CommonModule,
     ReactiveFormsModule,
     HttpModule,
+    AppRoutingModule,
     MaterialModule,
     FlexLayoutModule,
     ClipboardModule

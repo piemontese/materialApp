@@ -1,18 +1,39 @@
 <md-card>
-<section>
-  <h2> Active buttons</h2>  
-  <button md-button>FLAT</button>
-  <button md-raised-button color="primary">PRIMARY</button>
-  <button md-raised-button color="accent">ACCENT</button>
-  <button md-raised-button color="warn">WARN</button>
-</section>
 
-<section>
-  <h2>Disabled buttons</h2>  
-  <button md-button disabled>FLAT</button>
-  <button md-raised-button color="primary" disabled>PRIMARY</button>
-  <button md-raised-button color="accent" [disabled]="true">ACCENT</button>
-  <button md-raised-button color="warn" [disabled]="true">WARN</button>
-</section>
+  <section>
+    <h3> Active buttons</h3>  
+    <button md-button>FLAT</button>
+    <button md-raised-button color="primary">PRIMARY</button>
+    <button md-raised-button color="accent">ACCENT</button>
+    <button md-raised-button color="warn">WARN</button>
+  </section>
+
+  <section>
+    <h3>Disabled buttons</h3>  
+    <button md-button disabled>FLAT</button>
+    <button md-raised-button color="primary" disabled>PRIMARY</button>
+    <button md-raised-button color="accent" [disabled]="true">ACCENT</button>
+    <button md-raised-button color="warn" [disabled]="true">WARN</button>
+  </section>
+
+  <section>
+    <h3>Fab and mini fab buttons</h3>  
+    <button md-fab><md-icon>check</md-icon></button>
+    <button md-mini-fab><md-icon>check</md-icon></button>  
+  </section>
+
+  <section>
+    <h3>Link Buttons</h3>
+    <a md-button routerLink="http://www.google.com">Flat button</a>
+    <a md-raised-button routerLink=".">Raised button</a>
+    <a md-fab routerLink="."><md-icon>check</md-icon></a>
+    <a md-mini-fab routerLink="."><md-icon>check</md-icon></a>
+      <a
+        md-button
+        color="primary"
+        href="http://www.google.com"
+        target="_blank">Google</a>
+  </section>
+
 </md-card>
 	

@@ -4,6 +4,7 @@ export enum Tags {
     card, 
     checkbox, 
     dialog, 
+    flexLayout,
     input, 
     menu, 
     progressSpinner, 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ElementRef, AfterContentInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/timeout';
@@ -33,12 +33,15 @@ export class CommonCodeComponent implements OnInit {
         () => console.log('completed!')
       );
       */
+      let headers = new Headers();
+      headers.append('Content-Type', 'text');
+      headers.append('Access-Control-Allow-Origin', '*');
       this.copyTooltip = 'Copy code';
       this.requestEnd = false;
       let str: string = '';
       for( let i=0; i<this.codeUrl.length; i++ ) {
         this.code = [];
-        this.http.get(this.codeUrl)
+        this.http.get(this.codeUrl, headers)
 //          .timeout(1)
           .catch(this.handleError)
           .subscribe( response => str = response.text(),

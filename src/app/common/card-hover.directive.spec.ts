@@ -1,11 +1,11 @@
-/* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
+//import { TestBed, async } from '@angular/core/testing';
 import { CardHoverDirective } from './card-hover.directive';
-
+/*
 describe('CardHoverDirective', () => {
   it('should create an instance', () => {
-    let directive = new CardHoverDirective();
+    const directive = new CardHoverDirective();
     expect(directive).toBeTruthy();
   });
 });
+*/
