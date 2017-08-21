@@ -1,0 +1,17 @@
+.parent-container { 
+//  display: flex;
+  background-color: rgb(246,246,255);
+  height: 100%;
+}
+
+.code-color { 
+  background-color: rgb(242,255,242);
+//  height: 100%;
+}
+
+.code-container { 
+  margin-top: 0;
+//  padding-left: 10px;
+  max-height: 400px;
+  overflow: auto;
+}

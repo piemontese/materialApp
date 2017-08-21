@@ -1,0 +1,35 @@
+.main-container { 
+  display: inline-flex;
+}
+
+.container-base {
+  display: flex;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column; /* column | row */
+}
+
+.container-1 { 
+  @extend .container-base;
+  background-color: cornflowerblue;
+}
+
+.container-2 { 
+  @extend .container-base;
+  background-color: burlywood;
+}
+
+.container-3 { 
+  @extend .container-base;
+  background-color: aquamarine;
+}
+
+.container-4 { 
+  @extend .container-base;
+  background-color: darksalmon;
+}
+

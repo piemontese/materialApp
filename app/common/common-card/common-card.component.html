@@ -1,0 +1,37 @@
+<md-card>
+  <md-card-title color="primary" (click)="showCardContent()">
+    {{title}}
+  </md-card-title>
+  <!--   
+  <md-card-content *ngIf="showContent" [@cardInOut]="cardState">
+  -->
+  <md-card-content *ngIf="showContent">
+ 		<!-- 
+    <app-common-main-toolbar [title]="toolbarTitle">
+    </app-common-main-toolbar>
+    <app-common-main-tab [tabs]="['OVERVIEW', 'API REFERENCE', 'EXAMPLES']">
+    </app-common-main-tab>
+    -->
+   	<app-common-toolbar [title]="toolbarTitle" 
+     	                  [tabs]="tabs"
+       	                [codeUrls]="codeUrls">
+  	
+    	<ng-content *ngIf="showContent && !viewCodeShow && tag==-1"></ng-content>
+	
+  	  <app-my-buttons *ngIf="tag==tags.button"></app-my-buttons>
+  	  <app-my-cards *ngIf="tag==tags.card"></app-my-cards>
+  	  <app-my-checkboxes *ngIf="tag==tags.checkbox"></app-my-checkboxes>
+  	  <app-my-inputs *ngIf="tag==tags.input"></app-my-inputs>
+  	  <app-my-menus *ngIf="tag==tags.menu"></app-my-menus>
+  	  <app-my-progress-bars *ngIf="tag==tags.progressBar"></app-my-progress-bars>
+  	  <app-my-progress-spinners *ngIf="tag==tags.progressSpinner"></app-my-progress-spinners>
+  	  <app-my-radio-buttons *ngIf="tag==tags.radioButton"></app-my-radio-buttons>
+  	  <app-my-slide-toggles *ngIf="tag==tags.slideToggle"></app-my-slide-toggles>
+  	  <app-my-toolbars *ngIf="tag==tags.toolbar"></app-my-toolbars>
+  	  <app-my-dialog *ngIf="tag==tags.dialog"></app-my-dialog>
+  	  <app-my-autocomplete *ngIf="tag==tags.autocomplete"></app-my-autocomplete>
+  	  <app-my-sidenav *ngIf="tag==tags.sidenav"></app-my-sidenav>
+  	  <app-my-flex-layout *ngIf="tag==tags.flexLayout"></app-my-flex-layout>
+    </app-common-toolbar>
+  </md-card-content>
+</md-card>

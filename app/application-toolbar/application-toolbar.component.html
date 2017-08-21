@@ -1,0 +1,24 @@
+<md-toolbar color="primary" class="fixed-top transparent-background mat-elevation-z10">
+	<!-- This fills the remaining space of the current row -->
+	<span class="example-fill-remaining-space"></span>
+  <button md-icon-button mdTooltip="Toggle Fullscreen" mdTooltipPosition="left" toggleFullscreen><md-icon>fullscreen</md-icon></button>
+	<md-toolbar-row>
+	  <button md-button [routerLink]="['/']" routerLinkActive="active" (click)="activeRoute='app-home'" class="app-home-button">{{title}}</button>
+	  <button md-button [routerLink]="['/components']" routerLinkActive="active" [routerLinkActiveOptions] ="{ exact: true }" (click)="activeRoute='app-components'" class="app-menu-button">COMPONENTS</button>
+ 	  <button md-button [routerLink]="['/get-started']" routerLinkActive="active" (click)="activeRoute='app-get-started'" class="app-menu-button">GET STARTED</button>
+	  
+	  <!-- This fills the remaining space of the current row -->
+	  <span class="example-fill-remaining-space"></span>
+    <div class="flex-container" fxLayout="row" *ngIf="activeRoute==='app-components'">
+      <div class="flex-item">
+        <button md-icon-button mdTooltip="View mode" mdTooltipPosition="below" (click)="listView=!listView"><md-icon>reorder</md-icon></button>
+        <button md-icon-button mdTooltip="Expand / collapse" mdTooltipPosition="below" (click)="expand=!expand"><md-icon>swap_vert</md-icon></button>
+        <button md-icon-button mdTooltip="Search" mdTooltipPosition="below" (click)="viewSearch=true" *ngIf="activeRoute==='app-components'"><md-icon>search</md-icon></button>
+        <md-input-container dividerColor="accent" *ngIf="viewSearch && activeRoute==='app-components'">
+        <input mdInput placeholder="Search" [(ngModel)]="listFilter" (ngModelChange)="appDataService.setListFilter(listFilter)" autofocus>
+        </md-input-container>
+        <button md-icon-button *ngIf="viewSearch && activeRoute==='app-components'" mdTooltip="Close search" mdTooltipPosition="below" (click)="viewSearch=!viewSearch; listFilter=''"><md-icon>clear</md-icon></button>
+      </div> 
+    </div>
+  </md-toolbar-row>
+</md-toolbar>

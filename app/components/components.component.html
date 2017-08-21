@@ -1,0 +1,14 @@
+<div class="app-container">
+		<div *ngFor="let component of components; let i=index" [ngClass]="{'grid-50': !listView }">
+		  <app-common-card *ngIf="showCard(component.cardTitle)" 
+		  				   			[title]="component.cardTitle"
+		                   [toolbarTitle] = "component.toolbarTitle"
+		                   [tabs]="component.tabs"
+		                   [codeUrls]="component.codeUrls"
+		                   [tag]="i"
+		                   [showContent]="expand"
+		                   (expandUpdated)="handleExpandUpdated($event)">
+		  </app-common-card>
+		</div>
+</div>
+

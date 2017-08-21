@@ -1,0 +1,75 @@
+/* Large */
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: flex-end;
+}
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  .navigation {
+    // When on medium sized screens, we center it by evenly distributing empty space around items
+    justify-content: flex-end;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  .navigation {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+
+
+/*
+input {
+//  background-color: white;  
+  color: white;
+  font-size: 17px;
+}
+*/
+.fixed-top {
+//  flex: 0 0 auto; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+//  height: 23px;
+}
+
+.transparent-background	 {
+//	 background-color: rgba(0, 0, 0, 0.3);
+	opacity: 0.8;
+}
+
+.app-title {
+//	font-size: 40px;
+}
+
+.app-container {
+  width: 100%;
+//  float: left;
+//  display: inline; 
+}
+
+.transitions {
+    width: 100px;
+    height: 100px;
+//    background: red;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+}
+
+.app-home-button {
+  font-size: 22px;
+}
+
+.app-menu-button {
+//  font-size: 13px;
+}
+
