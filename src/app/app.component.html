@@ -9,13 +9,13 @@
 	  <span class="example-fill-remaining-space"></span>
     <div class="flex-container" fxLayout="row" *ngIf="activeRoute==='app-components'">
       <div class="flex-item">
-        <button md-icon-button mdTooltip="View mode" mdTooltipPosition="below" (click)="listView=!listView"><md-icon>reorder</md-icon></button>
-        <button md-icon-button mdTooltip="Expand / collapse" mdTooltipPosition="below" (click)="expand=!expand"><md-icon>swap_vert</md-icon></button>
-        <button md-icon-button mdTooltip="Search" mdTooltipPosition="below" (click)="viewSearch=true" *ngIf="activeRoute==='app-components'"><md-icon>search</md-icon></button>
+        <button md-icon-button tooltip="View mode" tooltipPosition="below" (click)="listView=!listView"><md-icon>reorder</md-icon></button>
+        <button md-icon-button tooltip="Expand / collapse" tooltipPosition="below" (click)="expand=!expand"><md-icon>swap_vert</md-icon></button>
+        <button md-icon-button tooltip="Search" tooltipPosition="below" (click)="viewSearch=true" *ngIf="activeRoute==='app-components'"><md-icon>search</md-icon></button>
         <md-input-container dividerColor="accent" *ngIf="viewSearch && activeRoute==='app-components'">
         <input mdInput placeholder="Search" [(ngModel)]="listFilter" (ngModelChange)="appDataService.setListFilter(listFilter)" autofocus>
         </md-input-container>
-        <button md-icon-button *ngIf="viewSearch && activeRoute==='app-components'" mdTooltip="Close search" mdTooltipPosition="below" (click)="viewSearch=!viewSearch; listFilter=''"><md-icon>clear</md-icon></button>
+        <button md-icon-button *ngIf="viewSearch && activeRoute==='app-components'" tooltip="Close search" tooltipPosition="below" (click)="viewSearch=!viewSearch; listFilter=''"><md-icon>clear</md-icon></button>
       </div> 
     </div>
   </md-toolbar-row>

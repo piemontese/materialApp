@@ -32,7 +32,7 @@ export class MyDialogComponent implements OnInit {
       <!-- This fills the remaining space of the current row -->
       <span class="example-fill-remaining-space"></span>
       <span align="end">
-        <button md-icon-button mdTooltip="Close" mdTooltipPosition="below" md-dialog-close><md-icon>clear</md-icon></button>
+        <button md-icon-button tooltip="Close" tooltipPosition="below" md-dialog-close><md-icon>clear</md-icon></button>
       </span>
     </h2>
     <md-dialog-content>

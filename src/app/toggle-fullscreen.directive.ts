@@ -1,5 +1,5 @@
 import { Directive, HostListener } from '@angular/core';
-//const screenfull = require( 'screenfull' );
+// const screenfull = require( 'screenfull' );
 import * as screenfull from 'screenfull';
 
 @Directive({

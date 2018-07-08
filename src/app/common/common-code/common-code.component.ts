@@ -33,30 +33,28 @@ export class CommonCodeComponent implements OnInit {
         () => console.log('completed!')
       );
       */
-      let headers = new Headers();
+      const headers = new Headers();
       headers.append('Content-Type', 'text');
       headers.append('Access-Control-Allow-Origin', '*');
       this.copyTooltip = 'Copy code';
       this.requestEnd = false;
-      let str: string = '';
-      for( let i=0; i<this.codeUrl.length; i++ ) {
+      let str = '';
+      for ( let i = 0; i < this.codeUrl.length; i++ ) {
         this.code = [];
-        this.http.get(this.codeUrl, headers)
+        this.http.get(this.codeUrl, { headers: headers })
 //          .timeout(1)
           .catch(this.handleError)
           .subscribe( response => str = response.text(),
               () => {},
-              () => { this.code = str./*replace(/ /g, "&nbsp;").*/split("\n"); 
-                      this.requestEnd = true; 
+              () => { this.code = str./*replace(/ /g, "&nbsp;").*/split('\n');
+                      this.requestEnd = true;
                       this.codeString = '';
                       this.codeString = '\n' + str;
                     }
-        ),  (errorResponse: any) => { 
-                console.log('timeout error') 
-            };
+        ),  (errorResponse: any) => { console.log('timeout error') };
       }
 
-      let el = this.element.nativeElement;
+      const el = this.element.nativeElement;
 //    el.append('<p>new<p>');
     console.log(el);
 //    el.getElementById('code');

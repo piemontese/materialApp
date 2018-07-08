@@ -1,9 +1,9 @@
-<md-toolbar [color]="myColor">
+<md-toolbar color="myColor">
   <span>{{title}}</span>
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
-  <span><button md-icon-button mdTooltip={{tooltip}} mdTooltipPosition="below" (click)="viewCode()"><md-icon>code</md-icon></button></span>
+  <span><button md-icon-button matTooltip={{tooltip}} tooltipPosition="below" (click)="viewCode()"><md-icon>code</md-icon></button></span>
 </md-toolbar>
 <ng-content *ngIf="!viewCodeShow"></ng-content>
 <!-- tabs and codeUrls are arrays -->

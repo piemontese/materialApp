@@ -5,9 +5,9 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MyCodeService {
 
-  constructor( private http:Http ) { }
-  
-  getCode( url:string ) { 
+  constructor( private http: Http ) { }
+
+  getCode( url: string ) {
     return this.http.get(url).map( response => response.json());
   }
 

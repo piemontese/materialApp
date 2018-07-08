@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ClipboardModule } from 'ngx-clipboard';
-import { MaterialModule } from '@angular/material';
+import { AngularMaterialModule } from './app.material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
@@ -82,9 +82,8 @@ import { ToggleFullscreenDirective } from './toggle-fullscreen.directive';
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule,
     FlexLayoutModule,
-    ClipboardModule
+    ClipboardModule,
   ],
   providers: [
     MyCodeService
