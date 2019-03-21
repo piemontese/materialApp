@@ -1,9 +1,9 @@
-<md-input-container>
-  <input mdInput placeholder="State" [mdAutocomplete]="auto" [formControl]="stateCtrl">
-</md-input-container>
+<mat-form-field>
+  <input matInput placeholder="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+</mat-form-field>
 
-<md-autocomplete #auto="mdAutocomplete">
-  <md-option *ngFor="let state of filteredStates | async" [value]="state">
+<mat-autocomplete #auto="matAutocomplete">
+  <mat-option *ngFor="let state of filteredStates | async" [value]="state">
     {{ state }}
-  </md-option>
-</md-autocomplete>
+  </mat-option>
+</mat-autocomplete>

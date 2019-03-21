@@ -12,6 +12,25 @@ import 'hammerjs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { CdkTableModule } from '@angular/cdk/table';
+import { MatTooltipModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
+import { MatTabsModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material';
+import { MatSlideToggleModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material';
+import { MatRadioModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material';
+import { MatFormFieldControl } from '@angular/material';
+
 import { CommonToolbarComponent } from './common/common-toolbar/common-toolbar.component';
 import { CommonCardComponent } from './common/common-card/common-card.component';
 import { CommonTabsComponent } from './common/common-tabs/common-tabs.component';
@@ -84,6 +103,23 @@ import { ToggleFullscreenDirective } from './toggle-fullscreen.directive';
     AppRoutingModule,
     FlexLayoutModule,
     ClipboardModule,
+    CdkTableModule,
+    MatTooltipModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatTabsModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatMenuModule,
+    MatSlideToggleModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatSidenavModule,
+    MatFormFieldModule,
   ],
   providers: [
     MyCodeService

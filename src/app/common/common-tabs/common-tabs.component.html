@@ -1,6 +1,6 @@
-<md-tab-group (click)="onClick([selectedIndex])">
+<mat-tab-group (click)="onClick([selectedIndex])">
   <div *ngFor="let tab of tabs; let i = index;">
-    <md-tab label={{tab}}>
+    <mat-tab label={{tab}}>
    	  <app-common-code [codeUrl]="codeUrls[i]">
    	  </app-common-code>
    	  <!--  
@@ -10,6 +10,6 @@
 	    </code>
       </div>
       -->
-    </md-tab>
+    </mat-tab>
   </div>
-</md-tab-group>
+</mat-tab-group>

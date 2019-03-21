@@ -1,4 +1,4 @@
-<md-progress-bar mode="indeterminate" color="accent" *ngIf="requestEnd!=true"></md-progress-bar>
+<mat-progress-bar mode="indeterminate" color="accent" *ngIf="requestEnd!=true"></mat-progress-bar>
 <div class="parent-container">
 	<div class="grid-10">&nbsp;</div>
 	<pre class="code-container code-color grid-80">
@@ -7,7 +7,7 @@
 		</code>
 	</pre>
 	<div class="grid-10">
-	  <span><button md-icon-button md-tooltip={{copyTooltip}} tooltipPosition="below" ngxClipboard [cbContent]="codeString" (cbOnSuccess)="copyTooltip='Code copied'"><md-icon>note</md-icon></button></span>
+	  <span><button mat-icon-button matTooltip={{copyTooltip}} tooltipPosition="below" ngxClipboard [cbContent]="codeString" (cbOnSuccess)="copyTooltip='Code copied'"><mat-icon>note</mat-icon></button></span>
 	</div>
 </div>
 <!--  

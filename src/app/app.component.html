@@ -1,25 +1,25 @@
 <!--
-<md-toolbar color="primary" class="fixed-top transparent-background">
-	<md-toolbar-row>
-	  <button md-button [routerLink]="['/home']" (click)="activeRoute='app-home'" class="app-home-button">{{title}}</button>
-	  <button md-button [routerLink]="['/components']" (click)="activeRoute='app-components'">COMPONENTS</button>
- 	  <button md-button [routerLink]="['/get-started']" (click)="activeRoute='app-get-started'">GET STARTED</button>
+<mat-toolbar color="primary" class="fixed-top transparent-background">
+	<mat-toolbar-row>
+	  <button mat-button [routerLink]="['/home']" (click)="activeRoute='app-home'" class="app-home-button">{{title}}</button>
+	  <button mat-button [routerLink]="['/components']" (click)="activeRoute='app-components'">COMPONENTS</button>
+ 	  <button mat-button [routerLink]="['/get-started']" (click)="activeRoute='app-get-started'">GET STARTED</button>
 	  
 	  <!-- This fills the remaining space of the current row --><!--
 	  <span class="example-fill-remaining-space"></span>
     <div class="flex-container" fxLayout="row" *ngIf="activeRoute==='app-components'">
       <div class="flex-item">
-        <button md-icon-button tooltip="View mode" tooltipPosition="below" (click)="listView=!listView"><md-icon>reorder</md-icon></button>
-        <button md-icon-button tooltip="Expand / collapse" tooltipPosition="below" (click)="expand=!expand"><md-icon>swap_vert</md-icon></button>
-        <button md-icon-button tooltip="Search" tooltipPosition="below" (click)="viewSearch=true" *ngIf="activeRoute==='app-components'"><md-icon>search</md-icon></button>
-        <md-input-container dividerColor="accent" *ngIf="viewSearch && activeRoute==='app-components'">
-        <input mdInput placeholder="Search" [(ngModel)]="listFilter" (ngModelChange)="appDataService.setListFilter(listFilter)" autofocus>
-        </md-input-container>
-        <button md-icon-button *ngIf="viewSearch && activeRoute==='app-components'" tooltip="Close search" tooltipPosition="below" (click)="viewSearch=!viewSearch; listFilter=''"><md-icon>clear</md-icon></button>
+        <button mat-icon-button tooltip="View mode" tooltipPosition="below" (click)="listView=!listView"><mat-icon>reorder</mat-icon></button>
+        <button mat-icon-button tooltip="Expand / collapse" tooltipPosition="below" (click)="expand=!expand"><mat-icon>swap_vert</mat-icon></button>
+        <button mat-icon-button tooltip="Search" tooltipPosition="below" (click)="viewSearch=true" *ngIf="activeRoute==='app-components'"><mat-icon>search</mat-icon></button>
+        <mat-form-field dividerColor="accent" *ngIf="viewSearch && activeRoute==='app-components'">
+        <input matInput placeholder="Search" [(ngModel)]="listFilter" (ngModelChange)="appDataService.setListFilter(listFilter)" autofocus>
+        </mat-form-field>
+        <button mat-icon-button *ngIf="viewSearch && activeRoute==='app-components'" tooltip="Close search" tooltipPosition="below" (click)="viewSearch=!viewSearch; listFilter=''"><mat-icon>clear</mat-icon></button>
       </div> 
     </div>
-  </md-toolbar-row>
-</md-toolbar>
+  </mat-toolbar-row>
+</mat-toolbar>
 -->
 
 <app-application-toolbar></app-application-toolbar>

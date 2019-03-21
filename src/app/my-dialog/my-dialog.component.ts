@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-my-dialog',
@@ -8,7 +8,7 @@ import { MdDialog } from '@angular/material';
 })
 export class MyDialogComponent implements OnInit {
 
-  constructor( public dialog: MdDialog ) { }
+  constructor( public dialog: MatDialog ) { }
 
   openDialog() {
       this.dialog.open(DialogOverviewExampleDialog);
@@ -28,14 +28,14 @@ export class MyDialogComponent implements OnInit {
       }`
     ],
     template: `
-    <h2 md-dialog-title>Neptune
+    <h2 mat-dialog-title>Neptune
       <!-- This fills the remaining space of the current row -->
       <span class="example-fill-remaining-space"></span>
       <span align="end">
-        <button md-icon-button tooltip="Close" tooltipPosition="below" md-dialog-close><md-icon>clear</md-icon></button>
+        <button mat-icon-button tooltip="Close" tooltipPosition="below" mat-dialog-close><mat-icon>clear</mat-icon></button>
       </span>
     </h2>
-    <md-dialog-content>
+    <mat-dialog-content>
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg"/>
       <p>
         Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the
@@ -46,13 +46,13 @@ export class MyDialogComponent implements OnInit {
         astronomical units (4.50×109 km). It is named after the Roman god of the sea and has the
         astronomical symbol ♆, a stylised version of the god Neptune's trident.
       </p>
-    </md-dialog-content>
-    <md-dialog-actions align="end">
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
       <div layout="row" layout-align="end center">
-        <button md-raised-button md-dialog-close>Close</button>
-        <button md-raised-button color="primary" md-dialog-close>OK</button>
+        <button mat-raised-button mat-dialog-close>Close</button>
+        <button mat-raised-button color="primary" mat-dialog-close>OK</button>
       </div>
-    </md-dialog-actions>
+    </mat-dialog-actions>
   `
 })
 export class DialogOverviewExampleDialog {}
